@@ -1,0 +1,35 @@
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/NZXT.png" alt="Logo">
+    </div>
+
+    <div class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+    </div>
+
+    <div class="dark-toggle">
+      <label class="switch">
+        <input type="checkbox" (change)="toggleDarkMode()" [checked]="isDarkMode">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </nav>
+</header>
+<div class="rgb-divider"></div>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<div class="rgb-divider"></div>
+
+<footer class="site-footer">
+  <p>© 2025 Ismar Hasanović</p>
+  <div class="social-icons">
+  <a href="https://www.facebook.com/ipiakademija" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://ipi-akademija.ba/" target="_blank"><i class="fab fa-twitter"></i></a>
+  <a href="https://www.instagram.com/ipi_akademija/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+</footer>

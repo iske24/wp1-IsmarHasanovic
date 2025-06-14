@@ -1,0 +1,95 @@
+:root {
+  --primary-color: #5865F2;
+  --background-color: #2C2F33;
+  --surface-color: #23272A;
+  --text-color: #FFFFFF;
+  --text-muted: #B9BBBE;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+header, footer {
+  background-color: var(--surface-color);
+  padding: 1rem 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+nav a.active {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.rgb-divider {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rgb-move 25s ease infinite;
+}
+
+@keyframes rgb-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #9aa9ff;
+}
+
+.dark-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
